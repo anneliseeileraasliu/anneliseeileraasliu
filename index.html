@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<!--Info about the page-->
+		<link rel="stylesheet" href="webdev.css">
+		<script src=webdev.js"></script>
+		<link rel="stylesheet" href="imgsliderexstyle.css">
+		<title>The Pointe--NHHS's Original Balet Program</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+			* {box-sizing: border-box}
+
+			/* Set height of body and the document to 100% */
+			body, html {
+  		height: 100%;
+  	margin: 0;
+  	font-family: Arial;
+	}
+
+	/* Style tab links */
+	.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+}
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+	body {
+		font-family: "Lato", sans-serif;
+	}
+
+	.sidenav {
+		height: 100%;
+		width: 0;
+		position: fixed;
+		z-index: 1;
+		top: 0;
+		left: 0;
+		background-color: #111;
+		overflow-x: hidden;
+		transition: 0.5s;
+		padding-top: 60px;
+	}
+
+	.sidenav a {
+		padding: 8px 8px 8px 32px;
+		text-decoration: none;
+		font-size: 25px;
+		color: #818181;
+		display: block;
+		transition: 0.3s;
+	}
+
+	.sidenav a:hover {
+		color: #f1f1f1;
+	}
+
+	.sidenav .closebtn {
+		position: absolute;
+		top: 0;
+		right: 25px;
+		font-size: 36px;
+		margin-left: 50px;
+	}
+
+	@media screen and (max-height: 450px) {
+		.sidenav {padding-top: 15px;}
+		.sidenav a {font-size: 18px;}
+	}
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	body {font-family: Arial;}
+
+	</style>
+
+	</head>
+	<body>
+		<!--Content seen on the page-->
+		<h1>The Pointe</h1>
+		<h2>The ballet program at North Hollywood High School</h2>
+		<p>
+			<div class="wrap">
+				<div id="arrow-left" class="arrow"></div>
+				<div id="slider">
+					<div class="slide slide1">
+						<div class="slide-content">
+							<span>image1</span>
+						</div>
+					</div>
+					<div class="slide slide2">
+						<div class="slide-content">
+							<span>image2</span>
+						</div>
+					</div>
+					<div class="slide slide3">
+						<div class="slide-content">
+							<span>image3</span>
+						</div>
+					</div>
+				</div>
+					<div id="arrow-right" class="arrow"></div>
+
+				<script>
+						let sliderImages = document.querySelectorAll('.slide'),
+						arrowLeft = document.querySelector('#arrow-left'),
+						arrowRight = document.querySelector('#arrow-right'),
+						current = 0;
+
+					function reset(){
+						for(let i = 0; i < sliderImages.length; i++){
+							sliderImages[i].style.display = 'none';
+						}
+					}
+
+					function startSlide(){
+						reset();
+						sliderImages[0].style.display = 'block';
+					}
+
+					function slideLeft(){
+						reset();
+						sliderImages[current - 1].style.display = 'block';
+						current--;
+					}
+
+					function slideRight(){
+						reset();
+						sliderImages[current + 1].style.display = 'block';
+						current++;
+					}
+
+					arrowLeft.addEventListener('click', function(){
+						if(current === 0){
+							current = sliderImages.length;
+					}
+					slideLeft();
+					});
+
+					arrowRight.addEventListener('click', function(){
+						if(current === sliderImages.length - 1){
+							current = -1
+					}
+					slideRight();
+					});
+
+					startSlide();
+				</script>
+		</p>
+
+		<h3>Dance with Us</h3>
+
+	<script>
+	function openPage(pageName),elmnt,color) {
+	  var i, tabcontent, tablinks;
+	  tabcontent = document.getElementsByClassName("tabcontent");
+	  for (i = 0; i < tabcontent.length; i++) {
+	    tabcontent[i].style.display = "none";
+	  }
+	  tablinks = document.getElementsByClassName("tablink");
+	  for (i = 0; i < tablinks.length; i++) {
+	    tablinks[i].style.backgroundColor = "";
+	  }
+	  document.getElementById(pageName).style.display = "block";
+	  elmnt.style.backgroundColor = color;
+	}
+
+	// Get the element with id="defaultOpen" and click on it
+	document.getElementById("defaultOpen").click();
+	</script>
+
+<div id="mySidenav" class="sidenav">
+	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	<a href="thepointe.html">Home</a>
+	<a href="thepointeR.html">Requirements</a>
+	<a href="thepointeL.html">Location & Times</a>
+	<a href="thepointeC.html">Calendar</a>
+	<a href="thepointeA.html">About Us</a>
+</div>
+
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;  </span>
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+
+		<p> <img src = "https://uploads5.wikiart.org/images/edgar-degas/dancer-tilting.jpg" </p>
+
+	</body>
+
+</html>
